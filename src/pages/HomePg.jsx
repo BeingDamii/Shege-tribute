@@ -1,7 +1,11 @@
+import Preloader from "../Components/PreloaderComp";
+
 function Home(){
-    return(<>
-    homepage
-    </>)
+    return(
+        <>
+        <Preloader/>
+        </>
+    )
 }
 
 
