@@ -40,12 +40,18 @@ function Preloader() {
 const PreloaderWrapper = styled.div`
   display: flex;
   width: 100%;
-  background-color: white;
+  height: fit-content;
+  height: 90vh;
+  overflow: hidden;
+  background-color: #ffffff;
   flex-direction: column;
   .tweet-cards {
     width: 40%;
     align-self: center;
     justify-self: center;
+    @media only screen and (max-width: 600px) {
+      margin-right: 150px;
+    }
     .card-wrapper {
       width: 510px;
       height: 210px;
@@ -61,6 +67,12 @@ const PreloaderWrapper = styled.div`
         height: 100%;
         object-fit: cover;
       }
+
+      /* mobile styles tweet card */
+      @media only screen and (max-width: 600px) {
+        width: 300px;
+        height: 120px;
+      }
     }
   }
   .loading-info {
@@ -68,13 +80,23 @@ const PreloaderWrapper = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 450px;
+    @media only screen and (max-width: 600px) {
+      margin-top: 400px;
+    }
+
     img {
       width: 46px;
+      @media only screen and (max-width: 600px) {
+        width: 30px;
+      }
     }
     h2 {
       font-size: 16px;
       font-weight: normal;
-      margin-left: 10px;
+      margin-left: 10px;  
+       @media only screen and (max-width: 600px) {
+        font-size: 12px;
+       }
     }
   }
 `;
