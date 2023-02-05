@@ -5,44 +5,81 @@ import Card4 from "../resources/card4.png";
 import Card5 from "../resources/card5.png";
 import frogHead from "../resources/frog-head.png";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import {LoaderLeave,TextAnimation,TweetMotion1,TweetMotion2,TweetMotion3,TweetMotion4,TweetMotion5} from "../Animations/PreloaderAnime"
 
 // component items..
 function Preloader() {
   return (
-    <PreloaderWrapper>
-      <div className="tweet-cards">
-        <div className="card-wrapper">
+    <PreloaderWrapper
+      variants={LoaderLeave}
+      initial={"hidden"}
+      animate={"show"}
+    >
+      <motion.div className="tweet-cards">
+        <motion.div
+          className="card-wrapper"
+          variants={TweetMotion5}
+          initial={"hidden"}
+          animate={"show"}
+        >
           <img src={Card1} alt="img1" />
-        </div>
-        <div className="card-wrapper">
+        </motion.div>
+        <motion.div
+          className="card-wrapper"
+          variants={TweetMotion4}
+          initial={"hidden"}
+          animate={"show"}
+        >
           <img src={Card2} alt="img2" />
-        </div>{" "}
-        <div className="card-wrapper">
+        </motion.div>
+        <motion.div
+          className="card-wrapper"
+          variants={TweetMotion3}
+          initial={"hidden"}
+          animate={"show"}
+        >
           <img src={Card3} alt="img3" />
-        </div>{" "}
-        <div className="card-wrapper">
+        </motion.div>
+        <motion.div
+          className="card-wrapper"
+          variants={TweetMotion2}
+          initial={"hidden"}
+          animate={"show"}
+        >
           <img src={Card4} alt="img4" />
-        </div>{" "}
-        <div className="card-wrapper">
+        </motion.div>
+        <motion.div
+          className="card-wrapper"
+          variants={TweetMotion1}
+          initial={"hidden"}
+          animate={"show"}
+        >
           <img src={Card5} alt="img5" />
-        </div>
-      </div>
-      <div className="loading-info">
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="loading-info"
+        variants={TextAnimation}
+        initial={"hidden"}
+        animate={"show"}
+      >
         <img src={frogHead} alt="comrade head" />
         <h2>Shege loading please wait....</h2>
-      </div>
+      </motion.div>
     </PreloaderWrapper>
   );
 }
 
 // styles
 
-const PreloaderWrapper = styled.div`
+const PreloaderWrapper = styled(motion.div)`
   display: flex;
   width: 100%;
   height: fit-content;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
+  position: absolute;
   background-color: #ffffff;
   flex-direction: column;
   .tweet-cards {
@@ -55,9 +92,10 @@ const PreloaderWrapper = styled.div`
     .card-wrapper {
       width: 510px;
       height: 210px;
-      border: 1px solid black;
+      border: 2px solid black;
       position: fixed;
       margin-top: 200px;
+      overflow: hidden;
       :nth-child(5) {
         margin-left: 20px;
         top: 20px;
@@ -93,10 +131,10 @@ const PreloaderWrapper = styled.div`
     h2 {
       font-size: 16px;
       font-weight: normal;
-      margin-left: 10px;  
-       @media only screen and (max-width: 600px) {
+      margin-left: 10px;
+      @media only screen and (max-width: 600px) {
         font-size: 12px;
-       }
+      }
     }
   }
 `;
