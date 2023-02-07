@@ -75,6 +75,7 @@ function Preloader() {
 
 const PreloaderWrapper = styled(motion.div)`
   display: flex;
+  display:none;
   width: 100%;
   height: fit-content;
   height: 100vh;
