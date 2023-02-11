@@ -83,6 +83,7 @@ const PreloaderWrapper = styled(motion.div)`
   position: absolute;
   background-color: #ffffff;
   flex-direction: column;
+  z-index: 20;
   .tweet-cards {
     width: 40%;
     align-self: center;

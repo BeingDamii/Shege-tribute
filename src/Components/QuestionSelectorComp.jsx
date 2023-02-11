@@ -3,7 +3,7 @@ import SelectIcon from "../resources/select-icon.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
-function QuestionInput({ question, setQuestion }) {
+function QuestionSelector({ question, setQuestion }) {
   // states
   const [controls, setControls] = useState(false);
 
@@ -15,7 +15,7 @@ function QuestionInput({ question, setQuestion }) {
   }
 
   return (
-    <QuestionInputContainer>
+    <QuestionSelectorContainer>
       <img src={VaulenceHead} alt="the symbol of vawulence" />
       <div className="questionconteiner">
         <div className="question">
@@ -39,18 +39,19 @@ function QuestionInput({ question, setQuestion }) {
           </h3>
           <h3 onClick={getQuestion}>How has garri saved you?</h3>
           <h3 onClick={getQuestion}>Tell you heartbreak story?</h3>
+          <h3 onClick={getQuestion}>What has shege done to you? </h3>
         </div>
       </div>
-    </QuestionInputContainer>
+    </QuestionSelectorContainer>
   );
 }
 
-const QuestionInputContainer = styled.div`
+const QuestionSelectorContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
-  margin-top: 100px;
+  margin-top: 50px;
   .question {
     display: flex;
     flex-direction: row;
@@ -71,11 +72,11 @@ const QuestionInputContainer = styled.div`
   }
   .question-select {
     display: flex;
-    width: 100%;
     background-color: #ffffff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
     h3 {
       padding: 12px;
       width: 100%;
@@ -87,4 +88,4 @@ const QuestionInputContainer = styled.div`
   }
 `;
 
-export default QuestionInput;
+export default QuestionSelector;
