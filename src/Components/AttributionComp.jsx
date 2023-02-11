@@ -53,10 +53,12 @@ const AtrributionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  float: right;
+  align-self: flex-end;
+  position: absolute;
   #icon {
     display: block;
     align-self: center;
+    cursor: pointer;
   }
   .content-attribution {
     padding: 20px;
