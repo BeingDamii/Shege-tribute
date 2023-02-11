@@ -1,15 +1,11 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-
-
-
 function Attribution() {
+  // functions
 
-// functions
-
-const [showBadge, setShowBadge] = useState(false);
-console.log(showBadge)
+  const [showBadge, setShowBadge] = useState(false);
+  console.log(showBadge);
 
   return (
     <AtrributionContainer>
@@ -19,7 +15,8 @@ console.log(showBadge)
         viewBox="0 0 30 30"
         fill="none"
         id="icon"
-        onClick={()=>setShowBadge(!showBadge)}
+        onMouseEnter={() => setShowBadge(!showBadge)}
+        onMouseLeave={() => setShowBadge(!showBadge)}
       >
         <path
           fill-rule="evenodd"
@@ -29,14 +26,20 @@ console.log(showBadge)
         />
       </svg>
 
-      <div className="content-attribution"
-      style={{display:showBadge?"block":"none"}}
+      <div
+        className="content-attribution"
+        style={{ display: showBadge ? "block" : "none" }}
       >
         <p>
           This is a simple project built for fun by{" "}
           <a href="http://"> @hydedenz</a> and
           <a href="http://"> @tobiideaplpha</a>
-          frontend technologies used are <a href="http://"> ReactJs</a>, <a href="http://"> framer-motion</a>and <a href="http://"> styled components</a> link to the github repository is <a href="http://"> here</a>, say NO TO SHEGE 2023, lets have fun, learn more about copyright policy <a href="http://"> here</a>. T for Tenks
+          frontend technologies used are <a href="http://"> ReactJs</a>,{" "}
+          <a href="http://"> framer-motion</a>and{" "}
+          <a href="http://"> styled components</a> link to the github repository
+          is <a href="http://"> here</a>, say NO TO SHEGE 2023, lets have fun,
+          learn more about copyright policy <a href="http://"> here</a>. T for
+          Tenks
         </p>
       </div>
     </AtrributionContainer>
