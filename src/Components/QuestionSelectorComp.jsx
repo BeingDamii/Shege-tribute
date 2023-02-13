@@ -17,7 +17,7 @@ function QuestionSelector({ question, setQuestion }) {
   return (
     <QuestionSelectorContainer>
       <img src={VaulenceHead} alt="the symbol of vawulence" />
-      <div className="questionconteiner">
+      <div className="question-container">
         <div className="question">
           <h1>{question}</h1>
           <button
@@ -42,6 +42,13 @@ function QuestionSelector({ question, setQuestion }) {
           <h3 onClick={getQuestion}>What has shege done to you? </h3>
         </div>
       </div>
+      <div className="question-container-mobile">
+        <h1 className="question-mobile">What has shege done to you?</h1>
+        <div className="question-toggle">
+          <h3>Change question</h3>
+          <img src={SelectIcon} alt="click to change question" />
+        </div>
+      </div>
     </QuestionSelectorContainer>
   );
 }
@@ -53,7 +60,51 @@ const QuestionSelectorContainer = styled.div`
   align-self: center;
   margin-top: 20px;
   @media only screen and (max-width: 600px) {
-    margin-top: 200px;
+    margin-top: 30%;
+    img {
+      width: 70px;
+    }
+  }
+
+  /* mobile styles for question selector */
+  .question-container-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 90%;
+    @media only screen and (min-width: 600px) {
+      display: none;
+    }
+    .question-mobile {
+      font-size: 22px;
+      width: 80%;
+      text-align: center;
+    }
+    .question-toggle {
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      /* background-color: beige; */
+      width: fit-content;
+      margin-top: 10px;
+      h3 {
+        font-family: "poppins";
+        font-size: 20px;
+        font-weight: 500;
+        color: #548838;
+      }
+      img {
+        width: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .question-container {
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
   .question {
     display: flex;

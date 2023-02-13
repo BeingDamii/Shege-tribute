@@ -26,6 +26,7 @@ const QuestionInputContainer = styled.div`
   width: 40%;
   align-self: center;
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
