@@ -17,6 +17,7 @@ function Attribution() {
         id="icon"
         onMouseEnter={() => setShowBadge(!showBadge)}
         onMouseLeave={() => setShowBadge(!showBadge)}
+        onClick={() => setShowBadge(!showBadge)}
       >
         <path
           fill-rule="evenodd"
@@ -55,10 +56,15 @@ const AtrributionContainer = styled.div`
   justify-content: center;
   align-self: flex-end;
   position: absolute;
+  @media only screen and (max-width: 600px) {
+  }
   #icon {
     display: block;
     align-self: center;
     cursor: pointer;
+    @media only screen and (max-width: 600px) {
+      align-self: flex-end;
+    }
   }
   .content-attribution {
     padding: 20px;

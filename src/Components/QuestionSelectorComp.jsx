@@ -48,10 +48,11 @@ function QuestionSelector({ question, setQuestion }) {
 
 const QuestionSelectorContainer = styled.div`
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 20px;
   .question {
     display: flex;
     flex-direction: row;
@@ -72,6 +73,7 @@ const QuestionSelectorContainer = styled.div`
   }
   .question-select {
     display: flex;
+    display: none;
     background-color: #ffffff;
     flex-direction: column;
     justify-content: center;
