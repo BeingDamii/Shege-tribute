@@ -54,8 +54,6 @@ const AtrributionContainer = styled.div`
   justify-content: center;
   align-self: flex-end;
   position: absolute;
-  @media only screen and (max-width: 600px) {
-  }
   #icon {
     display: block;
     align-self: center;

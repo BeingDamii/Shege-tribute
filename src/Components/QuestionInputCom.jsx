@@ -26,10 +26,12 @@ const QuestionInputContainer = styled.div`
   width: 40%;
   align-self: center;
   display: flex;
-  display: none;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
   .form-input {
     background-color: #e9e9e9;
     width: 100%;

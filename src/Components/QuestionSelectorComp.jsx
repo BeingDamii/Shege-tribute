@@ -48,11 +48,13 @@ function QuestionSelector({ question, setQuestion }) {
 
 const QuestionSelectorContainer = styled.div`
   display: flex;
-  display: none;
   flex-direction: column;
   align-items: center;
   align-self: center;
   margin-top: 20px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 200px;
+  }
   .question {
     display: flex;
     flex-direction: row;
@@ -63,6 +65,10 @@ const QuestionSelectorContainer = styled.div`
     width: 100%;
     h1 {
       font-size: 20px;
+      @media only screen and (max-width: 600px) {
+        font-size: 16px;
+        text-align: center;
+      }
     }
     button {
       background-color: transparent;
