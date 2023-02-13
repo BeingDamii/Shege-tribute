@@ -15,8 +15,6 @@ function Attribution() {
         viewBox="0 0 30 30"
         fill="none"
         id="icon"
-        onMouseEnter={() => setShowBadge(!showBadge)}
-        onMouseLeave={() => setShowBadge(!showBadge)}
         onClick={() => setShowBadge(!showBadge)}
       >
         <path
