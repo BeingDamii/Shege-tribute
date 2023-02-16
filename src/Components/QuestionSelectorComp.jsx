@@ -62,7 +62,7 @@ const QuestionSelectorContainer = styled.div`
   flex-direction: column;
   align-items: center;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 0px;
   @media only screen and (max-width: 600px) {
     margin-top: 20%;
     img {

@@ -60,6 +60,7 @@ const QuestionInputContainer = styled.div`
     border-radius: 5px;
     border: transparent;
     font-size: 16px;
+    margin-top: -20px;
     font-family: "monument extended";
   }
 `;
