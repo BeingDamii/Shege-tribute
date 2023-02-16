@@ -6,4 +6,4 @@
 
 ### follow me oooo!!
 
-[Twitter](www.twitter.com/@hydedenz)
+[Twitter](https://twitter.com/@hydedenz)
