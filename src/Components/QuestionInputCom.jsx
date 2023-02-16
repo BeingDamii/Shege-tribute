@@ -45,6 +45,7 @@ const QuestionInputContainer = styled.div`
     font-weight: 400;
     ::placeholder {
       font-size: 20px;
+      color: #555555;
     } 
     @media only screen and (max-width: 600px) {
       height: 150px;

@@ -64,7 +64,7 @@ const QuestionSelectorContainer = styled.div`
   align-self: center;
   margin-top: 20px;
   @media only screen and (max-width: 600px) {
-    margin-top: 30%;
+    margin-top: 20%;
     img {
       width: 70px;
     }
