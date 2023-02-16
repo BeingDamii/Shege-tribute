@@ -5,7 +5,6 @@ import { useState } from "react";
 
 function QuestionSelector({ questions, setQuestions }) {
   // states
-  const [controls, setControls] = useState(false);
   const [index, setIndex] = useState(0);
   const [question, setQuestion] = useState(questions[index]);
 
@@ -43,9 +42,12 @@ function QuestionSelector({ questions, setQuestions }) {
 
       <div className="question-container-mobile">
         <h1 className="question-mobile">{question}</h1>
-        <div className="question-toggle" onClick={()=>{
-          changeQuestion()
-        }}>
+        <div
+          className="question-toggle"
+          onClick={() => {
+            changeQuestion();
+          }}
+        >
           <h3>Change question</h3>
           <img src={SelectIcon} alt="click to change question" />
         </div>
@@ -67,42 +69,6 @@ const QuestionSelectorContainer = styled.div`
       width: 70px;
     }
   }
-
-  /* mobile styles for question selector */
-  .question-container-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    width: 90%;
-    @media only screen and (min-width: 600px) {
-      display: none;
-    }
-    .question-mobile {
-      font-size: 22px;
-      width: 80%;
-      text-align: center;
-    }
-    .question-toggle {
-      display: flex;
-      align-self: center;
-      justify-self: center;
-      /* background-color: beige; */
-      width: fit-content;
-      margin-top: 10px;
-      h3 {
-        font-family: "poppins";
-        font-size: 20px;
-        font-weight: 500;
-        color: #548838;
-      }
-      img {
-        width: 20px;
-        margin-left: 10px;
-      }
-    }
-  }
-
   .question-container {
     @media only screen and (max-width: 600px) {
       display: none;
@@ -130,21 +96,38 @@ const QuestionSelectorContainer = styled.div`
       cursor: pointer;
     }
   }
-  .question-select {
+
+  /* mobile styles for question selector */
+  .question-container-mobile {
     display: flex;
-    display: none;
-    background-color: #ffffff;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: absolute;
-    h3 {
-      padding: 12px;
-      width: 100%;
-      font-size: 16px;
-      font-weight: 500;
-      border-bottom: 1px solid black;
-      cursor: pointer;
+    margin-top: 10px;
+    width: 90%;
+    @media only screen and (min-width: 600px) {
+      display: none;
+    }
+    .question-mobile {
+      font-size: 22px;
+      width: 80%;
+      text-align: center;
+    }
+    .question-toggle {
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      width: fit-content;
+      margin-top: 10px;
+      h3 {
+        font-family: "poppins";
+        font-size: 20px;
+        font-weight: 500;
+        color: #548838;
+      }
+      img {
+        width: 20px;
+        margin-left: 10px;
+      }
     }
   }
 `;
