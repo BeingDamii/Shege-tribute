@@ -3,17 +3,26 @@ import SelectIcon from "../resources/select-icon.svg";
 import styled from "styled-components";
 import { useState } from "react";
 
-function QuestionSelector({ question, setQuestion }) {
+function QuestionSelector({ questions, setQuestions }) {
   // states
   const [controls, setControls] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [question, setQuestion] = useState(questions[index]);
 
   // functions
-  function getQuestion(e) {
-    const userQuestion = e.target.textContent;
-    console.log(e);
-    setQuestion(userQuestion);
+  function changeQuestion() {
+    if (index !== questions.length) {
+      setQuestion(questions[index]);
+      setIndex(index + 1);
+      console.log(index);
+    } else {
+      setIndex(1);
+      setQuestion(questions[0]);
+      console.log(question, index);
+    }
   }
 
+  // Elements
   return (
     <QuestionSelectorContainer>
       <img src={VaulenceHead} alt="the symbol of vawulence" />
@@ -22,29 +31,21 @@ function QuestionSelector({ question, setQuestion }) {
           <h1>{question}</h1>
           <button
             onClick={() => {
-              setControls(!controls);
+              changeQuestion();
             }}
           >
             <img src={SelectIcon} alt="icon" />
           </button>
         </div>
-        <div
-          className="question-select"
-          style={{
-            display: controls ? "flex" : "none",
-          }}
-        >
-          <h3 onClick={getQuestion} type="special">
-            What has sapa done to you?
-          </h3>
-          <h3 onClick={getQuestion}>How has garri saved you?</h3>
-          <h3 onClick={getQuestion}>Tell you heartbreak story?</h3>
-          <h3 onClick={getQuestion}>What has shege done to you? </h3>
-        </div>
       </div>
+
+      {/*  mobile-only elements */}
+
       <div className="question-container-mobile">
-        <h1 className="question-mobile">What has shege done to you?</h1>
-        <div className="question-toggle">
+        <h1 className="question-mobile">{question}</h1>
+        <div className="question-toggle" onClick={()=>{
+          changeQuestion()
+        }}>
           <h3>Change question</h3>
           <img src={SelectIcon} alt="click to change question" />
         </div>
@@ -53,6 +54,7 @@ function QuestionSelector({ question, setQuestion }) {
   );
 }
 
+// styles
 const QuestionSelectorContainer = styled.div`
   display: flex;
   flex-direction: column;

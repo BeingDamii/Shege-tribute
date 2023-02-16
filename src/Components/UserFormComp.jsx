@@ -5,14 +5,17 @@ import { useState } from "react";
 import QuestionSelector from "./QuestionSelectorComp";
 
 function UserForm() {
-  const [userQuestion, setUserQuestion] = useState(
-    "What has shege done to you? "
-  );
+  const [questions, setQuestions] = useState(
+    [
+    "What has shege done to you? ",
+    "How has garri saved you?",
+    "Tell you heartbreak story?"
+  ]);
   const [formValue, setFormValue] = useState("Tell us your story.... ");
   return (
     <UserFormContainer>
       <Attribution />
-      <QuestionSelector question={userQuestion} setQuestion={setUserQuestion} />
+      <QuestionSelector questions={questions} setQuestions={setQuestions} />
       <QuestionInput formValue={formValue} setFormValue={setFormValue} />
     </UserFormContainer>
   );
