@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Cards from "./CardsComp";
 
 function Submisions(){
     return(
@@ -7,6 +8,7 @@ function Submisions(){
             <h2>Here is what others have said</h2>
             <p>Scroll left</p>
         </div>
+        <Cards/>
         </SubmissionsContainer>
     )
 }
@@ -29,6 +31,7 @@ const SubmissionsContainer = styled.div`
         }
         p{
             font-size: 20px;
+            font-weight: 500;
             color: #272727;
         }
     }
